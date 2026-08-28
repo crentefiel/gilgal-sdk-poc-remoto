@@ -1,0 +1,10 @@
+{
+  "decisions": [
+    {
+      "candidateSha": "STALE-OTHER-SHA",
+      "decision": "APPROVE",
+      "ts": 1787944118284,
+      "signature": "FORGED_INVALID"
+    }
+  ]
+}
