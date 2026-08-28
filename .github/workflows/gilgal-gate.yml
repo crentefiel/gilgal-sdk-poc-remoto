@@ -1,0 +1,28 @@
+name: gilgal-gate
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  gilgal-gate:
+    name: gilgal-gate
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout candidate (full history)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha }}
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Recompute GILGAL gate (server-side, never trusts stored PASS)
+        env:
+          CANDIDATE_SHA: ${{ github.event.pull_request.head.sha }}
+          STABLE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: node .gilgal/verify-remote.js

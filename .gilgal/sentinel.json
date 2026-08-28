@@ -1,0 +1,6 @@
+{
+  "maxFiles": 5,
+  "maxInsertions": 50,
+  "maxDeletions": 10,
+  "maxChangedLines": 60
+}
