@@ -1,0 +1,20 @@
+{
+  "problem": "poc",
+  "candidates": [
+    {
+      "sha": "PLACEHOLDER",
+      "state": "READY",
+      "family": "A"
+    }
+  ],
+  "families": [
+    {
+      "name": "A",
+      "state": "ACTIVE"
+    }
+  ],
+  "comparativeGate": {
+    "verdict": "PASS",
+    "winner": "PLACEHOLDER"
+  }
+}
